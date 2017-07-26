@@ -24,5 +24,6 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'backend\assets\FontAwesomeAsset',
+        'backend\assets\IeAsset',
     ];
 }
