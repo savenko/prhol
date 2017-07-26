@@ -52,15 +52,6 @@ public function behaviors()
         ]);
     }
 
-//    public function actionChangeStatus(){
-//        if($_POST['editableKey']){
-//            $model=Apple::findOne(['id'=>$_POST['editableKey']]);
-//            $model->status=(string)$_POST['Apple'][$_POST['editableIndex']]['status'];
-//            $model->save();
-//            echo Json::encode(['result'=>'ok']);
-//        }
-//    }
-
     public function actionChangeSize(){
         if($_POST['editableKey']){
             $model=Apple::findOne(['id'=>$_POST['editableKey']]);
