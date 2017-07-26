@@ -1,6 +1,8 @@
 <?php
 namespace backend\controllers;
 
+use common\models\User;
+use frontend\models\SignupForm;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -22,7 +24,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','signup'],
                         'allow' => true,
                     ],
                     [
@@ -70,8 +72,12 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout="login";
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
+        } elseif (User::find()->count()==0){
+            return $this->redirect(['signup']);
         }
 
         $model = new LoginForm();
@@ -82,6 +88,30 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    /**
+     * Create Admin action.
+     *
+     * @return string
+     */
+
+    public function actionSignup(){
+        $this->layout="login";
+
+        if(User::find()->count()>0){
+            return $this->redirect(['login']);
+        }
+
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                return $this->redirect(['login']);
+            }
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 
     /**

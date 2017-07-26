@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2099dd55ad0ea56853b9f025aa8e2928",
+    "content-hash": "3fde3a63760f4717dc6b3b61f1752557",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -54,6 +54,37 @@
                 "responsive",
                 "web"
             ]
+        },
+        {
+            "name": "bower-asset/components-font-awesome",
+            "version": "4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/font-awesome.git",
+                "reference": "885308b939369d147bec93174722786bc2c4eedd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/font-awesome/zipball/885308b939369d147bec93174722786bc2c4eedd",
+                "reference": "885308b939369d147bec93174722786bc2c4eedd",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "css/font-awesome.css"
+                ],
+                "bower-asset-ignore": [
+                    "Makefile",
+                    "component.json",
+                    "composer.json"
+                ]
+            },
+            "license": [
+                "MIT",
+                "OFL-1.1"
+            ],
+            "description": "Font Awesome, the iconic font designed for use with Twitter Bootstrap."
         },
         {
             "name": "bower-asset/jquery",

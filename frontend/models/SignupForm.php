@@ -12,6 +12,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $password2;
 
 
     /**
@@ -22,17 +23,21 @@ class SignupForm extends Model
         return [
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Это имя пользователя уже зарезервировано.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Этот email уже зарезервирован.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['password2', 'compare', 'compareAttribute' => 'password'],
+            ['password2', 'required'],
+            ['password2', 'string', 'min' => 6],
         ];
     }
 
@@ -54,5 +59,15 @@ class SignupForm extends Model
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Имя пользователя',
+            'password' => 'Пароль',
+            'password2' => 'Подтверждение пароля',
+            'email' => 'Email',
+        ];
     }
 }
