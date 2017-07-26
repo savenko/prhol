@@ -19,8 +19,8 @@ return [
                     'except' => ['yii\web\HttpException:404'],
                     'levels' => ['error', 'warning'],
                     'message' => [
-                        'from' => ['sovahome85@gmail.com'],
-                        'to' => ['sovahome85@gmail.com'],
+                        'from' => ['admin@example.com'],
+                        'to' => ['admin@example.com'],
                         'subject' => 'Ошибки на TestSite',
                     ],
                 ],
