@@ -121,3 +121,10 @@ a.desc:after {
 label[for=loginform-rememberme]{
     padding: 0;
 }
+.box_color{
+    display:inline-block;
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+}

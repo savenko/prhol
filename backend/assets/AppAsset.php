@@ -13,11 +13,13 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/theme/AdminLTE.min.css',
+        'css/theme/skin-blue.min.css',
         'js/iCheck/square/blue.css',
         'css/site.css',
     ];
     public $js = [
         'js/iCheck/icheck.min.js',
+        'js/adminlte.min.js',
         'js/site.js'
     ];
     public $depends = [
