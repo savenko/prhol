@@ -65,6 +65,7 @@ public function behaviors()
         }
     }
 
+
     public function actionFallToGround(int $id){
         $model=Apple::findOne(['id'=>$id]);
         if(!$model) throw new HttpException(404,'Apple is not exist');
