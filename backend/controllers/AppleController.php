@@ -52,6 +52,10 @@ public function behaviors()
         ]);
     }
 
+    /**
+     * Change Size for Apple
+     * @return json
+     */
     public function actionChangeSize(){
         if($_POST['editableKey']){
             $model=Apple::findOne(['id'=>$_POST['editableKey']]);
@@ -65,7 +69,10 @@ public function behaviors()
         }
     }
 
-
+    /**
+     * Fall To Ground Apple.
+     * @return mixed
+     */
     public function actionFallToGround(int $id){
         $model=Apple::findOne(['id'=>$id]);
         if(!$model) throw new HttpException(404,'Apple is not exist');
