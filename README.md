@@ -33,12 +33,19 @@ Yii 2 Advanced Project Template (Тестовый проект)
 Когда испорчено - съесть не получится.
 Когда съедено - удаляется из массива яблок.
 Пример результирующего скрипта:
-$apple = new Apple('green';);
+
+$apple = new Apple('green');
+
 echo $apple->color; // green
+
 $apple->eat(50); // откусить пол яблока
+
 echo $apple->size; // 0.5 - decimal
+
 $apple->fallToGround(); // упасть на землю
+
 $apple->eat(25); // откусить четверть яблока
+
 echo $apple->size; // 0,75
 
 На странице в приложении должны быть отображены все яблоки, которые на этой же странице
